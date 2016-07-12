@@ -1,4 +1,4 @@
-# Admin App 
+# Weather App 
 
  `npm i`, then `gulp` or `npm start`
 
