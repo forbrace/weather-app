@@ -1,0 +1,20 @@
+<div class="search">
+    <tags-input ng-model="$ctrl.cities"
+                on-tag-added="$ctrl.search()"
+                placeholder="Enter city"></tags-input>
+
+    <div class="search-loading" ng-if="$ctrl.loading">
+        <div class="loader">
+            <svg class="circular" viewBox="25 25 50 50">
+                <circle class="path" cx="50" cy="50" r="20" fill="none"
+                        stroke-width="3"
+                        stroke-miterlimit="10"></circle>
+            </svg>
+        </div>
+    </div>
+
+</div>
+
+<div class="search-error" ng-if="!$ctrl.loading && $ctrl.errorMessage">
+    {{$ctrl.errorMessage}}
+</div>

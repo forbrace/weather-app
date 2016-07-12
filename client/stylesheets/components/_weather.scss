@@ -1,0 +1,77 @@
+.weather {
+  @include flexbox;
+  @include flex-flow(row wrap);
+  margin-left: 10px;
+}
+
+.weather-card {
+  padding: 10px;
+  background: #fff;
+  margin: 10px 10px 0 0;
+
+  @include box-sizing(border-box);
+  @include flex-basis(100%);
+
+  @media (min-width: $screen-sm) {
+    @include flex-basis(calc(50% - 10px));
+  }
+  @media (min-width: $screen-md) {
+    @include flex-basis(calc(33.3333% - 10px));
+  }
+  @media (min-width: $screen-lg) {
+    @include flex-basis(calc(25% - 10px));
+  }
+
+}
+
+.weather-card-row {
+  @include flexbox;
+  @include flex-flow(row wrap);
+  @include align-items(center);
+}
+
+.weather-card-col {
+  padding-right: 5px;
+  @include box-sizing(border-box);
+  @include flex-basis(calc(33.333% - 5px));
+
+  &:nth-child(1) {
+    @include flex-basis(calc(33% - 5px));
+  }
+  &:nth-child(2) {
+    @include flex-basis(calc(34% - 5px));
+  }
+  &:nth-child(3) {
+    padding-right: 0;
+    @include flex-basis(33%);
+  }
+}
+
+.weather-card-name {
+  font-weight: bold;
+}
+
+.weather-card-date {
+  font-size: 12px;
+  color: #A1A8AF;
+}
+
+.weather-card-temp {
+  font-weight: bold;
+  font-size:24px;
+}
+
+.weather-card-desc {
+  font-size: 12px;
+  color: #A1A8AF;
+}
+
+.weather-card-humidity {
+  font-size: 12px;
+  color: #A1A8AF;
+}
+
+.weather-card-wind {
+  font-size: 12px;
+  color: #A1A8AF;
+}

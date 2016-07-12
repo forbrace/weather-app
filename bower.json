@@ -1,0 +1,25 @@
+{
+  "name": "frontend-bootstrap",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "Dmitry Paputsa <dmitry@paputsa.com>"
+  ],
+  "license": "ISC",
+  "moduleType": [],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.6",
+    "ng-tags-input": "^3.1.1",
+    "normalize-scss": "normalize.scss#^5.0.3",
+    "sass-flex-mixin": "^1.0.3"
+  },
+  "devDependencies": {}
+}

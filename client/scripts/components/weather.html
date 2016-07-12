@@ -1,0 +1,36 @@
+<div class="weather">
+    <div class="weather-card" ng-repeat="city in $ctrl.cities">
+        <div class="weather-card-row">
+            <div class="weather-card-col">
+                <div class="weather-card-name text-wrap">
+                    {{city.data.name}}
+                </div>
+                <div class="weather-card-date text-wrap">
+                    {{ $ctrl.convertUnixDate(city.data.dt) | date: 'd MMM' }}
+                </div>
+            </div>
+            <div class="weather-card-col">
+                <div>
+                    <span class="weather-card-temp">
+                        {{ city.data.main.temp | number: 0 }}<small><sup>°C</sup></small>
+                    </span>
+                </div>
+                <div class="weather-card-desc text-wrap text-capitalize">
+                    {{ city.data.weather[0].description }}
+                </div>
+            </div>
+            <div class="weather-card-col">
+                <div class="weather-card-humidity text-wrap">
+                    Humidity: {{ city.data.main.humidity }}%
+                </div>
+                <div class="weather-card-wind text-wrap">
+                    Wind: {{ $ctrl.formatSpeed(city.data.wind.speed) }} km/h
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<pre ng-if="$ctrl.debug">
+    {{$ctrl.cities | json}}
+</pre>

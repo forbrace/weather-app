@@ -1,0 +1,79 @@
+span.loader {
+  display: inline-block;
+}
+.loader {
+  position: relative;
+  margin: 0 auto;
+  width: $loader-width;
+  &:before {
+    content:'';
+    display: block;
+    padding-top: 100%;
+  }
+
+  .circular {
+    @include animation(loader-rotate 2s linear infinite);
+    height: 100%;
+    @include transform-origin(center center);
+    width: 100%;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    margin: auto;
+  }
+
+  .path {
+    //stroke-dasharray: 1,200;
+    stroke-dasharray: 200%,500; // IE spinner
+    stroke-dashoffset: 0;
+    stroke-linecap: round;
+    stroke: #fff;
+    @include animation(loader-dash 1.5s ease-in-out infinite);
+  }
+
+  &.loader-colored .path {
+    $animation: loader-dash 1.5s ease-in-out infinite, loader-color 6s ease-in-out infinite;
+    -webkit-animation: $animation;
+    -o-animation: $animation;
+    animation: $animation;
+  }
+}
+
+@-webkit-keyframes loader-rotate{
+  100%{
+    @include rotate(360deg);
+  }
+}
+@keyframes loader-rotate{
+  100%{
+    @include rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loader-dash{
+  0%{
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%{
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35px;
+  }
+  100%{
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124px;
+  }
+}
+@keyframes loader-dash{
+  0%{
+    stroke-dasharray: 1,200;
+    stroke-dashoffset: 0;
+  }
+  50%{
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -35px;
+  }
+  100%{
+    stroke-dasharray: 89,200;
+    stroke-dashoffset: -124px;
+  }
+}
